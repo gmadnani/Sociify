@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS sociify_db;
+CREATE DATABASE sociify_db;
