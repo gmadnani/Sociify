@@ -18,6 +18,8 @@ router.get("/profile", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    console.log(user);
+
     console.log("logged in successfully");
 
     // Open edit profile page after login
