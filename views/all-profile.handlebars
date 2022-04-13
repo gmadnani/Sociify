@@ -8,5 +8,15 @@ profile cards
 
  --}}
 
- <h1>Profile page</h1>
+ <h1>All Profiles page</h1>
  
+ {{#each profiles as |profile| }}
+
+ <img src="{{profile.photo}}" alt="{{profile.photo}}">
+
+   <p>{{profile.user.name}}</p>
+   <p>{{profile.city}}</p>
+   <p>{{profile.country}}</p>
+   <p>{{profile.about}}</p>
+
+ {{/each}}
