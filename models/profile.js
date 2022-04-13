@@ -11,10 +11,6 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     number: {
         type: DataTypes.NUMBER,
         allowNull: true,
@@ -32,7 +28,7 @@ Profile.init(
         allowNull: true,
     },
     skills: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: true,
     },
     aboutme: {
