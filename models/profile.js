@@ -11,62 +11,48 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    number: {
-        type: DataTypes.NUMBER,
-        allowNull: true,
+    phone: {
+      type: DataTypes.INTEGER,
     },
     city: {
-         type: DataTypes.STRING,
-         allowNull: true,
-    }, 
+      type: DataTypes.STRING,
+    },
     country: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
     },
     photo: {
-        type: DataTypes.STRING, 
-        allowNull: true,
+      type: DataTypes.STRING,
+    },
+    about: {
+      type: DataTypes.STRING,
     },
     skills: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
-        allowNull: true,
-    },
-    aboutme: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
     },
     experience: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
     },
     hobbies: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
     },
     facebook_link: {
-        type: DataTypes.STRING,
-        allowNull: true,
-
+      type: DataTypes.STRING,
     },
     linkedin_link: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
     },
     github_link: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
     },
     privacy: {
-        type: DataTypes.STRING,
-        allowNull: true,
-
+      type: DataTypes.STRING,
     },
-    userID: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'User',
-            key: 'id',
-        },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {
