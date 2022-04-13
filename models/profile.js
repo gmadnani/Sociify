@@ -13,39 +13,51 @@ Profile.init(
     },
     phone: {
       type: DataTypes.INTEGER,
+      defaultValue: '000000'
     },
     city: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     country: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     photo: {
       type: DataTypes.STRING,
+      defaultValue: 'https://sociify-profile-photos.s3.eu-west-2.amazonaws.com/default.png'
     },
     about: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     skills: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     experience: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     hobbies: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     facebook_link: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     linkedin_link: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     github_link: {
       type: DataTypes.STRING,
+      defaultValue: 'a'
     },
     privacy: {
       type: DataTypes.STRING,
+      defaultValue: 'Private'
     },
     user_id: {
       type: DataTypes.INTEGER,
