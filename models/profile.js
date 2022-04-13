@@ -57,7 +57,7 @@ Profile.init(
     },
     privacy: {
       type: DataTypes.STRING,
-      defaultValue: 'Private'
+      defaultValue: 'private'
     },
     user_id: {
       type: DataTypes.INTEGER,
