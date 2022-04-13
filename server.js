@@ -42,4 +42,4 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 // Test of image upload
-// imageUpload.uploadFile("./public/img/profile-placeholder.png", "test.png");
+// imageUpload.uploadFile("./public/img/profile-placeholder.png", "default.png");
