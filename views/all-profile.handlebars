@@ -1,14 +1,17 @@
 <h1>All Profiles page</h1>
 
- Search: <input type="text">
+ Search: <input type="text" id="search">
  
  {{#each profiles as |profile| }}
-
- <img src="{{profile.photo}}" alt="{{profile.photo}}">
-
+<div class="profile">
+    <img src="{{profile.photo}}" alt="{{profile.photo}}">
    <p>{{profile.user.name}}</p>
    <p>{{profile.city}}</p>
    <p>{{profile.country}}</p>
    <p>{{profile.about}}</p>
+</div>
 
  {{/each}}
+
+ {{!-- Search Script --}}
+ <script src="/js/search.js"></script>
