@@ -35,6 +35,13 @@ User.init(
         len: [8],
       },
     },
+    conpass: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
+    },
   },
   {
     hooks: {
