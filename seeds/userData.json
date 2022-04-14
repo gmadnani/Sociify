@@ -2,26 +2,22 @@
     {
       "name": "Oli",
       "email": "oli@email.com",
-      "password": "password12345",
-      "conpass": "password12345"
+      "password": "password12345"
     },
     {
       "name": "Giri",
       "email": "giri@email.com",
-      "password": "password12345",
-      "conpass": "password12345"
+      "password": "password12345"
     },
     {
       "name": "Zain",
       "email": "zain@email.com",
-      "password": "password12345",
-      "conpass": "password12345"
+      "password": "password12345"
     },
     {
       "name": "Jibril",
       "email": "jibril@email.com",
-      "password": "password12345",
-      "conpass": "password12345"
+      "password": "password12345"
     }
   ]
   
