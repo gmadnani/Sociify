@@ -51,7 +51,7 @@ router.get("/register", (req, res) => {
 });
 
 // Get all profiles page
-router.get("/all", async (req, res) => {
+router.get("/all", withAuth , async (req, res) => {
   try {
     // Get all profiles and JOIN with user data
     const profileData = await Profile.findAll({
@@ -75,4 +75,15 @@ router.get("/all", async (req, res) => {
   }
 });
 
+router.get("/myprofile/id",withAuth, async (req, res) => {
+  res.render("my-profile");
+});
+router.get("/singleprofile", withAuth, async(req, res) => {
+  res.render("single-profile");
+});
+
+
+
+
 module.exports = router;
+
