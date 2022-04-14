@@ -20,7 +20,7 @@
     <div class="card">
         <div class="col-6">
     
-      <img src="img/profile-placeholder.png" class="card-img-top" alt="...">
+      <img src="/public/img/profile-placeholder.png" class="card-img-top" alt="...">
     </div>
     <br>
     
@@ -44,15 +44,15 @@
        
       
       <div class="col-12">
-         
+          <div class="card">
        
        
         
-        <form>
+        <form class="login-form">
             
             <div class="mb-3">
-              <p>{{name}}</p>
-              
+              <label for="exampleInputPassword1" class="form-label">Name</label>
+              <input type="password" class="form-control" id="userPassword">
               
             </div>
             <div class="mb-3">
@@ -62,13 +62,10 @@
                 
               </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">city</label>
+                <label for="exampleInputPassword1" class="form-label">Skills</label>
                 <input type="password" class="form-control" id="userPassword">
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Country</label>
-                <input type="password" class="form-control" id="userPassword">
-              </div>
+              
           </form>
           
       </div>
@@ -80,7 +77,7 @@
 
 </div>
 
-
+</div>
 
 
 <!-- second area -->
@@ -93,21 +90,18 @@
         
         
             
-            
-              <label for="exampleInputPassword1" class="form-label">Skills</label>
+            <div class="mb-3 card">
+              <label for="exampleInputPassword1" class="form-label">About Me</label>
               <input type="password" class="form-control" id="userPassword">
               
-           
-            
+            </div>
+            <div class="mb-3 card ">
                 <label for="exampleInputEmail1" class="form-label">Expereince</label>
                 <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text"></div>
                 
-           
-          <label for="exampleInputEmail1" class="form-label">Hobbies</label>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text"></div>
-                
+              </div>
+          
             
           
       </div>
