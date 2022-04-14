@@ -83,27 +83,7 @@ router.get("/singleprofile", withAuth, async(req, res) => {
 });
 
 
-router.get("/singleprofile", withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Profile }],
-    });
 
-    const user = userData.get({ plain: true });
-
-    console.log("logged in successfully");
-
-    // Open edit profile page after login
-    res.render("edit-profile", {
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;
 
