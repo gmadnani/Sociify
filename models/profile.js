@@ -11,17 +11,21 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    email: {
+      type: DataTypes.STRING,
+      defaultValue: ''
+    },
     phone: {
       type: DataTypes.INTEGER,
-      defaultValue: '000000'
+      defaultValue: '0'
     },
     city: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     country: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     photo: {
       type: DataTypes.STRING,
@@ -29,31 +33,31 @@ Profile.init(
     },
     about: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     skills: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     experience: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     hobbies: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     facebook_link: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     linkedin_link: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     github_link: {
       type: DataTypes.STRING,
-      defaultValue: 'a'
+      defaultValue: ''
     },
     privacy: {
       type: DataTypes.STRING,
