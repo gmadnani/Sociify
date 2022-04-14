@@ -39,7 +39,7 @@ router.put("/editProfile/:id", withAuth, async ( req, res ) => {
     }
 });
 
-router.put( "/editPhoto", withAuth, async ( req, res ) => {
+router.put( "/editPhoto/:id", withAuth, async ( req, res ) => {
     try{
         const editPhoto = await Profile.update ( req.body, {
             where: {
@@ -70,14 +70,17 @@ router.delete( "/:id", async (req, res) => {
       }
 });
 
-// router.post("/privacy", async (req, res) => {
-//     const privacyChange = await Profile.findAll( { attributes: ['id', 'privacy']});
-//     // const privacyChange = await Profile.update( req.body, {
-//     //     where: { 
-//     //         user_id: req.session.user_id,
-//     //     },
-//     // });
-//     res.status(200).json(privacyChange);
-// })
+router.put("/privacy", withAuth, async (req, res) => {
+    const privacyChange = await Profile.findOne( {where: {user_id: req.session.user_id}, attributes: ['id', 'privacy']});
+    if( privacyChange.privacy == 'private'){
+        privacyChange.privacy = 'public'
+    } else {
+        privacyChange.privacy = 'private'
+    }
+    privacyChange.save();
+
+    res.status(200).json(privacyChange);
+})
+
 
 module.exports  = router; 
