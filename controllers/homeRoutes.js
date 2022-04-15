@@ -98,7 +98,7 @@ router.get("/editProfile", withAuth, async (req, res) => {
   }
 });
 
-router.get("/singleprofile", withAuth, async(req, res) => {
+router.get("/singleprofile", async(req, res) => {
   res.render("single-profile");
 });
 
