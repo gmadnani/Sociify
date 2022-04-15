@@ -12,6 +12,7 @@
   {{!-- Loop over profiles and display them --}}
   <div class="row">
     {{#each profiles as |profile| }}
+    {{#if (privacy_check profile.privacy)}}
     <div class="col-3 profile p-2">
       <div class="card">
         <img src={{profile.photo}}>
@@ -24,6 +25,7 @@
         </div>
       </div>
     </div>
+    {{/if}}
     {{/each}}
   </div>
 
