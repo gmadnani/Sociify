@@ -75,12 +75,9 @@ router.get("/all", withAuth , async (req, res) => {
   }
 });
 
-router.get("/myprofile/id",withAuth, async (req, res) => {
-  res.render("my-profile");
-});
-router.get("/singleprofile", withAuth, async(req, res) => {
-  res.render("single-profile");
-});
+
+
+
 
 
 
