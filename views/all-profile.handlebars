@@ -12,18 +12,20 @@
   {{!-- Loop over profiles and display them --}}
   <div class="row">
     {{#each profiles as |profile| }}
-    <div class="col-3 profile p-2">
-      <div class="card">
-        <img src="{{profile.photo}}" alt="">
-        <div class="card-body">
-          <div class="searchItems">
-            <h5 class="card-title user-name">{{profile.user.name}}</h5>
-            <p class="card-text user-location mb-2">{{profile.city}}, {{profile.country}}</p>
+      {{!-- {{#if profile.privacy }} --}}
+      <div class="col-3 profile p-2">
+        <div class="card">
+          <img src="{{profile.photo}}" alt="">
+          <div class="card-body">
+            <div class="searchItems">
+              <h5 class="card-title user-name">{{profile.user.name}}</h5>
+              <p class="card-text user-location mb-2">{{profile.city}}, {{profile.country}}</p>
+            </div>
+              <a href="profiles/{{profile.id}}" class="btn btn-outline-dark">View Profile</a>
           </div>
-            <a href="profile/{{profile.id}}" class="btn btn-outline-dark">View Profile</a>
         </div>
       </div>
-    </div>
+      {{!-- {{/if}} --}}
     {{/each}}
   </div>
 

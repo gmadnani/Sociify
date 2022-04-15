@@ -110,22 +110,4 @@ router.get("/profiles/:id", withAuth, async (req, res) => {
   }
 });
 
-//
-// router.get("/:id", async (req, res) => {
-//   const profileData = await Profile.findOne({
-//     where: { id: req.params.id },
-//   }).catch((err) => {
-//     res.json(err);
-//   });
-//   res.json(profileData);
-// });
-
-router.get("/profile/:id", withAuth, async (req, res) => {
-  res.render("single-profile");
-});
-
-router.get("/myprofile/:id", withAuth, async (req, res) => {
-  res.render("my-profile");
-});
-
 module.exports = router;
