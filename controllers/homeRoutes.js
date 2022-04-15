@@ -100,6 +100,10 @@ router.get("/editProfile", withAuth, async (req, res) => {
 
 // Get single profile page by id
 router.get("/profiles/:id", async (req, res) => {
+  if (req.session.user_id == req.params.id) {
+    res.redirect("/myProfile");
+    return;
+  }
   try {
     // Get profiles and JOIN with user data
     const profileData = await Profile.findOne({

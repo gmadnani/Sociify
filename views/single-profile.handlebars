@@ -2,7 +2,20 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <img src="{{profile.photo}}" alt="">
+        <div class="card col-12 ">
+    <div class="card-body">
+ 
+
+    <!-- image is half of col 12 left -->
+    <div class="card">
+        <div class="col-6">
+    
+      <img src="{{profile.photo}}" class="card-img-top" alt="{{profile.photo}}">
+    </div>
+    <br>
+    </div>
+
+</div>
         <p class="lead">{{profile.user.name}}</p>
         <p>{{profile.city}}, {{profile.country}}</p>
         <p>{{profile.email}}</p>
