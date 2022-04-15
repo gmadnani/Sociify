@@ -1,22 +1,31 @@
-<form class="registerForm">
+<div class="bg-light p-5 rounded">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <h3 class="pb-4">Register</h3>
 
-  <div class="mb-3">
-    <label for="exampleInputName" class="form-label">Name</label>
-    <input type="name" class="form-control" id="RegisterName">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <form class="registerForm needs-validation">
+          <div class="mb-3">
+            <label for="registerName" class="form-label">Name</label>
+            <input type="name" class="form-control" id="registerName" required>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="registerPassword" minlength="8" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" minlength="8" aria-describedby="passwordHelp" required>
+            <div id="passwordHelp" class="form-text d-none text-danger">Passwords do not match</div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="registerButton">Register</button>
+        </form>
+
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="RegisterPassword">
-  </div>
- <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-    <input type="password" class="form-control" id="userPassword">
-  </div>
-  <button type="submit" class="btn btn-primary" id="registerButton">Register</button>
-</form>
+</div>
 
 <script src="/js/register.js"></script>

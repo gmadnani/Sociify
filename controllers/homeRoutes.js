@@ -34,7 +34,7 @@ router.get("/register", (req, res) => {
 });
 
 // Get all profiles page
-router.get("/allProfiles" , async (req, res) => {
+router.get("/allProfiles", async (req, res) => {
   try {
     // Get all profiles and JOIN with user data
     const profileData = await Profile.findAll({
@@ -59,16 +59,16 @@ router.get("/allProfiles" , async (req, res) => {
 });
 
 router.get("/myProfile", withAuth, async (req, res) => {
-  try{
+  try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Profile }],
     });
 
     const user = userData.get({ plain: true });
-    res.render("my-profile" , {
+    res.render("my-profile", {
       ...user,
-      logged_in:  true,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -100,6 +100,10 @@ router.get("/editProfile", withAuth, async (req, res) => {
 
 // Get single profile page by id
 router.get("/profiles/:id", async (req, res) => {
+  if (req.session.user_id == req.params.id) {
+    res.redirect("/myProfile");
+    return;
+  }
   try {
     // Get profiles and JOIN with user data
     const profileData = await Profile.findOne({
