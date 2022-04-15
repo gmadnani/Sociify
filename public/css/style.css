@@ -2,3 +2,8 @@
 body {
   padding-top: 4.5rem;
 }
+
+.inputSize{
+  /* width: auto; */
+  height: 200px;
+}
