@@ -34,7 +34,7 @@ router.get("/register", (req, res) => {
 });
 
 // Get all profiles page
-router.get("/allProfiles", withAuth , async (req, res) => {
+router.get("/allProfiles" , async (req, res) => {
   try {
     // Get all profiles and JOIN with user data
     const profileData = await Profile.findAll({
@@ -99,7 +99,7 @@ router.get("/editProfile", withAuth, async (req, res) => {
 });
 
 // Get single profile page by id
-router.get("/profiles/:id", withAuth, async (req, res) => {
+router.get("/profiles/:id", async (req, res) => {
   try {
     // Get profiles and JOIN with user data
     const profileData = await Profile.findOne({
