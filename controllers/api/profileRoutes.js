@@ -52,19 +52,19 @@ router.put("/editProfile/:id", withAuth, async (req, res) => {
   }
 });
 
-// Edit photo
-router.put("/editPhoto/:id", withAuth, async (req, res) => {
-  try {
-    const editPhoto = await Profile.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.status(200).json(editPhoto);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+// // Edit photo
+// router.put("/editPhoto/:id", withAuth, async (req, res) => {
+//   try {
+//     const editPhoto = await Profile.update(req.body, {
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
+//     res.status(200).json(editPhoto);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 // Upload photo
 router.put("/upload/:id", async (req, res) => {
