@@ -14,7 +14,7 @@
     {{#each profiles as |profile| }}
     <div class="col-3 profile p-2">
       <div class="card">
-        <img src="img/profile-placeholder.png" alt="">
+        <img src={{profile.photo}}>
         <div class="card-body">
           <div class="searchItems">
             <h5 class="card-title user-name">{{profile.user.name}}</h5>

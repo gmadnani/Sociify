@@ -69,18 +69,27 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" value={{profile.email}}>
                 <div id="emailHelp" class="form-text"></div>
                 
               </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">city</label>
-                <input type="password" class="form-control" id="userCity">
+                <label for="exampleInputPassword1" class="form-label">City</label>
+                <input type="text" class="form-control" id="userCity" value={{profile.city}}>
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Country</label>
-                <input type="password" class="form-control" id="userCountry">
+                <input type="text" class="form-control" id="userCountry" value={{profile.country}}>
               </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="userPhone" value={{profile.phone}}>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Skills</label>
+                <input type="text" class="form-control" id="userSkills" value="{{profile.skills}}">
+              </div>
+
           </form>
           
       </div>
@@ -106,19 +115,19 @@
         
             
             
-              <label for="userSkills" class="form-label">Skills</label>
-              <input type="text" class="form-control" id="userSkills">
+              <label for="exampleInputPassword1" class="form-label">About Me</label>
+              <input type="text" class="form-control" id="userAbout" value="{{profile.about}}">
               
            
             
                 <label for="exampleInputEmail1" class="form-label">Expereince</label>
-                <input type="textarea" class="form-control" id="userExperience" aria-describedby="userExperience">
+                <input type="text" class="form-control" id="userExperience" aria-describedby="emailHelp" value="{{profile.experience}}">
                 <div id="emailHelp" class="form-text"></div>
                 
            
-          <label for="userHobbies" class="form-label">Hobbies</label>
-                <input type="email" class="form-control" id="userHobbies" aria-describedby="userHobbies">
-                <div id="textarea" class="form-text"></div>
+          <label for="exampleInputEmail1" class="form-label">Hobbies</label>
+                <input type="text" class="form-control" id="userHobbies" aria-describedby="emailHelp" value="{{profile.hobbies}}">
+                <div id="emailHelp" class="form-text"></div>
                 
             
           

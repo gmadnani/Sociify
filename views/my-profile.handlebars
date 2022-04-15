@@ -19,15 +19,14 @@
     <!-- image is half of col 12 left -->
     <div class="card">
         <div class="col-6">
+
     
-      <img src="img/profile-placeholder.png" class="card-img-top" alt="...">
+      <img src={{profile.photo}} class="card-img-top" alt="...">
     </div>
     <br>
     
      <div class="flex-row">
         
-      <a href="#" class="btn btn-primary">Upload image</a>
-      <a href="#" class="btn btn-primary">Save image</a>
     </div>
 </div>
 
@@ -47,29 +46,31 @@
           <div class="card">
        
        
-        
+
         <form class="login-form">
             
             <div class="mb-3">
-              <p>{{Name}}</p>
-              <input type="password" class="form-control" id="userPassword">
-              
+              <p>{{name}}</p>
             </div>
+
             <div class="mb-3">
-                <p>{{Email}}</p>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text"></div>
-                
-              </div>
+              <p>{{profile.email}}</p>
+            </div>
+
+            <div class="mb-3">
+              <p>{{profile.phone}}</p>
+            </div>
+
+
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Skills</label>
-                <input type="password" class="form-control" id="userPassword">
+                <p>{{ profile.skills}}</p>
               </div>
               
           </form>
           
       </div>
-      <a href="#" class="btn btn-primary">Save Changes</a>
+      <a href="#" class="btn btn-primary">Edit Profile</a>
     </div>
     
 
@@ -91,16 +92,21 @@
         
             
             <div class="mb-3 card">
-              <label for="exampleInputPassword1" class="form-label">About Me</label>
-              <input type="password" class="form-control" id="userPassword">
-              
+              <label for="aboutme" class="form-label">About Me</label>
+              {{profile.about}}
             </div>
+
             <div class="mb-3 card ">
-                <label for="exampleInputEmail1" class="form-label">Expereince</label>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text"></div>
-                
-              </div>
+              <label for="experience" class="form-label">Expereince</label>
+              {{profile.experience}}
+            </div>
+
+            <div class="mb-3 card ">
+              <label for="hobbies" class="form-label">Hobbies</label>
+              {{profile.hobbies}}
+            </div>
+
+
           
             
           

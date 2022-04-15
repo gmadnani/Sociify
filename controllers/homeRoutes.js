@@ -13,33 +13,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get("/profile", withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Profile }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    console.log("logged in successfully");
-
-    // Open edit profile page after login
-    res.render("edit-profile", {
-      ...user,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // If the user is already logged in, redirect to profile
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/myprofile");
     return;
   }
 
@@ -49,7 +26,7 @@ router.get("/login", (req, res) => {
 // If the user is already logged in, redirect to profile
 router.get("/register", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/editprofile");
     return;
   }
 
@@ -57,7 +34,7 @@ router.get("/register", (req, res) => {
 });
 
 // Get all profiles page
-router.get("/all", withAuth, async (req, res) => {
+router.get("/allProfiles", withAuth , async (req, res) => {
   try {
     // Get all profiles and JOIN with user data
     const profileData = await Profile.findAll({
@@ -81,10 +58,47 @@ router.get("/all", withAuth, async (req, res) => {
   }
 });
 
-router.get("/myprofile/id", withAuth, async (req, res) => {
-  res.render("my-profile");
+router.get("/myProfile", withAuth, async (req, res) => {
+  try{
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Profile }],
+    });
+
+    const user = userData.get({ plain: true });
+    res.render("my-profile" , {
+      ...user,
+      logged_in:  true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
-router.get("/singleprofile", withAuth, async (req, res) => {
+
+// Use withAuth middleware to prevent access to route
+router.get("/editProfile", withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Profile }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    console.log("logged in successfully");
+
+    // Open edit profile page after login
+    res.render("edit-profile", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/singleprofile", withAuth, async(req, res) => {
   res.render("single-profile");
 });
 
