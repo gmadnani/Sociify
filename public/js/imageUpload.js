@@ -63,7 +63,7 @@ const uploadImage = async (e) => {
     });
     if (response.ok) {
       setTimeout(() => {
-        location.replace("/profile");
+        location.replace("/myProfile");
       }, 200);
     } else {
       showModal(response.statusText);
