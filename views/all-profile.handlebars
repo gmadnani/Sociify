@@ -1,31 +1,36 @@
+<div class="container pb-2">
 
-   
-    <div class="input-group mb-3 flex-row justify-center">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+  {{!-- Search bar --}}
+  <div class="row justify-content-md-center py-2">
+    <div class="col-md-6">
+      <div class="input-group flex-row justify-center">
+        <input type="text" class="form-control form-control-lg" placeholder="Search users.." id="search">
       </div>
+    </div>
+  </div>
 
-      <div class="container ">
-      <div class="row">
-       {{#each profiles as |profile| }}
-      
-        
-
-
-          <div class="col-3 ">
-              <div class="card">
-            <img src="img/profile-placeholder.png" alt=""">
-            <div class="card-body">
-              <h5 class="card-title">{{profile.user.name}}</h5>
-              <p class="card-text">{{profile.city}}</p>
-               <p class="card-text">{{profile.country}}</p>
-                <p class="card-text"><p>{{profile.about}}</p></p>
-              <a href="profile/{{profile.id}}" class="btn btn-primary">view profile</a>
-            </div>
+  {{!-- Loop over profiles and display them --}}
+  <div class="row">
+    {{#each profiles as |profile| }}
+    <div class="col-3 profile p-2">
+      <div class="card">
+        <img src="img/profile-placeholder.png" alt="">
+        <div class="card-body">
+          <div class="searchItems">
+            <h5 class="card-title user-name">{{profile.user.name}}</h5>
+            <p class="card-text user-location mb-2">{{profile.city}}, {{profile.country}}</p>
           </div>
-          </div>
-             {{/each}}
+            <a href="profile/{{profile.id}}" class="btn btn-outline-dark">View Profile</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 
+</div>
+
+ {{!-- Search Script --}}
+ <script src="/js/search.js"></script>
 
 
         
