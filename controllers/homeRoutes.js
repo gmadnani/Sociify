@@ -34,7 +34,7 @@ router.get("/register", (req, res) => {
 });
 
 // Get all profiles page
-router.get("/allProfiles", withAuth , async (req, res) => {
+router.get("/allProfiles", withAuth, async (req, res) => {
   try {
     // Get all profiles and JOIN with user data
     const profileData = await Profile.findAll({
@@ -59,16 +59,16 @@ router.get("/allProfiles", withAuth , async (req, res) => {
 });
 
 router.get("/myProfile", withAuth, async (req, res) => {
-  try{
+  try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Profile }],
     });
 
     const user = userData.get({ plain: true });
-    res.render("my-profile" , {
+    res.render("my-profile", {
       ...user,
-      logged_in:  true,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -98,8 +98,32 @@ router.get("/editProfile", withAuth, async (req, res) => {
   }
 });
 
-router.get("/singleprofile", withAuth, async(req, res) => {
-  res.render("single-profile");
+// Get single profile page by id
+router.get("/profiles/:id", withAuth, async (req, res) => {
+  try {
+    // Get profiles and JOIN with user data
+    const profileData = await Profile.findOne({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const profile = profileData.get({ plain: true });
+
+    console.log(profile);
+    // Pass serialized data and session flag into template
+    res.render("single-profile", {
+      profile,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
