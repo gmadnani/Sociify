@@ -1,6 +1,6 @@
 const sequelize = require("../config/connection");
 const User = require("../models/User");
-const Profile = require("../models/Profile");
+const Profile = require("../models/profile");
 const userData = require("./userData.json");
 const profileData = require("./profileData.json");
 
