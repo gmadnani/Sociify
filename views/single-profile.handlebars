@@ -11,16 +11,17 @@
             class="card-img-top img-fluid"
             alt="users image"
             width="360px"
-            height="360px">
+            height="360px"
+          />
         </div>
-        <br>
+        <br />
 
         <div class="flex-row">
 
         </div>
       </div>
 
-      <br>
+      <br />
 
       <div class="">
         <div class="">
@@ -30,7 +31,7 @@
             <div class="col-6">
               <p>{{profile.user.name}}</p>
             </div>
- <p>{{profile.city}}, {{profile.country}}</p>
+            <p>{{profile.city}}, {{profile.country}}</p>
             <div class="mb-3">
               <p>{{profile.email}}</p>
             </div>
@@ -50,7 +51,7 @@
           </form>
 
         </div>
-        <a href="#" class="btn btn-primary">Edit Profile</a>
+
       </div>
 
     </div>
@@ -81,6 +82,34 @@
           {{profile.hobbies}}
         </div>
 
+        <div class="mb-3 card">
+          <label for="facebook" class="form-label"><img
+              src="/img/facebook.png"
+              height="50"
+              width="50"
+            /><a
+              class="px-2"
+              href={{profile.facebook_link}}
+            >{{profile.facebook_link}}</a></label>
+
+          <label for="linkedin" class="form-label"><img
+              src="/img/linkedin.png"
+              height="50"
+              width="50"
+            /><a
+              class="px-2"
+              href={{profile.linkedin_link}}
+            >{{profile.linkedin_link}}</a></label>
+
+          <label for="github" class="form-label"><img
+              src="/img/github (1).png"
+              height="50"
+              width="50"
+            /><a
+              class="px-2"
+              href={{profile.github_link}}
+            >{{profile.github_link}}</a></label>
+        </div>
       </div>
     </div>
 
