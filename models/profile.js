@@ -16,8 +16,8 @@ Profile.init(
       defaultValue: ''
     },
     phone: {
-      type: DataTypes.INTEGER,
-      defaultValue: '0'
+      type: DataTypes.STRING,
+      defaultValue: ''
     },
     city: {
       type: DataTypes.STRING,

@@ -21,6 +21,9 @@ const sess = {
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
+    dialectOptions: {
+      supportBigNumbers: true
+    },
   }),
 };
 
