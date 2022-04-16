@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-6">
     {{!-- left side --}}
       <div class="card cardColor">
@@ -21,30 +21,30 @@
         <form>
             
             <div class="m-3">
-              <p class="lead">{{name}}</p>
+              <p class="lead text-white">{{name}}</p>
             </div>
-            <div class="mb-2">
-              <button type="button" class="btn btn-sm btn-outline-danger" id="privacySwitch">{{profile.privacy}}</button>
+            <div class="m-2">
+              <button type="button" class="btn btn-sm btn-outline-danger m-2" id="privacySwitch">{{profile.privacy}}</button>
             </div>
             <div class="m-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <label for="exampleInputEmail1" class="form-label text-white">Email</label>
                 <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" value={{profile.email}}>
                 <div id="emailHelp" class="form-text"></div>
               </div>
             <div class="m-3">
-                <label for="exampleInputPassword1" class="form-label">City</label>
+                <label for="exampleInputPassword1" class="form-label text-white">City</label>
                 <input type="text" class="form-control" id="userCity" value={{profile.city}}>
               </div>
               <div class="m-3">
-                <label for="exampleInputPassword1" class="form-label">Country</label>
+                <label for="exampleInputPassword1" class="form-label text-white">Country</label>
                 <input type="text" class="form-control" id="userCountry" value={{profile.country}}>
               </div>
               <div class="m-3">
-                <label for="exampleInputPassword1" class="form-label">Phone</label>
+                <label for="exampleInputPassword1" class="form-label text-white">Phone</label>
                 <input type="text" class="form-control" id="userPhone" value={{profile.phone}}>
               </div>
               <div class="m-3">
-                <label for="exampleInputPassword1" class="form-label">Skills</label>
+                <label for="exampleInputPassword1" class="form-label text-white">Skills</label>
                 <input type="text" class="form-control" id="userSkills" value="{{profile.skills}}">
               </div>
 
@@ -57,15 +57,15 @@
   <div class="col-md-6 card cardColor">
     {{!-- Right side --}}
     <div class="card-body">
-              <label for="exampleInputPassword1" class="form-label">About Me</label>
+              <label for="exampleInputPassword1" class="form-label text-white">About Me</label>
               <input type="text" class="form-control inputSize" id="userAbout" value="{{profile.about}}">
 
-                <label for="exampleInputEmail1" class="form-label">Expereince</label>
+                <label for="exampleInputEmail1" class="form-label text-white">Expereince</label>
                 <input type="text" class="form-control inputSize" id="userExperience" aria-describedby="emailHelp" value="{{profile.experience}}">
                 <div id="emailHelp" class="form-text"></div>
                 
            
-          <label for="exampleInputEmail1" class="form-label p-2">Hobbies</label>
+          <label for="exampleInputEmail1" class="form-label p-2 text-white">Hobbies</label>
                 <input type="text" class="form-control inputSize" id="userHobbies" aria-describedby="emailHelp" value="{{profile.hobbies}}">
                 <div id="emailHelp" class="form-text"></div>
 
@@ -82,7 +82,8 @@
       </div>
 
 
-<a href="#" class="btn btn-primary">Save Changes</a>
+<a href="#" class="btn btn-primary m-2">Save Changes</a>
+
   </div>
 </div>
 
