@@ -22,14 +22,14 @@
             
             <div class="m-3">
               <p class="lead">{{name}}</p>
-              
-              
+            </div>
+            <div class="mb-2">
+              <button type="button" class="btn btn-sm btn-outline-danger" id="privacySwitch">{{profile.privacy}}</button>
             </div>
             <div class="m-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" value={{profile.email}}>
                 <div id="emailHelp" class="form-text"></div>
-                
               </div>
             <div class="m-3">
                 <label for="exampleInputPassword1" class="form-label">City</label>
@@ -65,7 +65,7 @@
                 <div id="emailHelp" class="form-text"></div>
                 
            
-          <label for="exampleInputEmail1" class="form-label">Hobbies</label>
+          <label for="exampleInputEmail1" class="form-label p-2">Hobbies</label>
                 <input type="text" class="form-control inputSize" id="userHobbies" aria-describedby="emailHelp" value="{{profile.hobbies}}">
                 <div id="emailHelp" class="form-text"></div>
 
@@ -105,3 +105,4 @@
 </div>
 
 <script src="/js/imageUpload.js"></script>
+<script src="/js/privacy.js"></script>
