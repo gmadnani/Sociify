@@ -26,7 +26,7 @@ const registerFormHandler = async (event) => {
     if (response.ok) {
       console.log("we are logged in");
 
-      const newProfile = await fetch("/api/profile/createProfile", {
+      await fetch("/api/profile/createProfile", {
         method: "POST",
       });
       // If successful, redirect the browser to the profile page
