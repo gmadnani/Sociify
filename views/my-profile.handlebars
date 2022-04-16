@@ -1,70 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Document</title>
-</head>
-<body>
-
-    <div class="d-inline-flex">
-
-<div class="card col-12 ">
+<div class="card col-12 cardColor">
+  <div class="d-md-inline-flex">
     <div class="card-body">
- 
 
-    <!-- image is half of col 12 left -->
-    <div class="card">
+      <!-- image is half of col 12 left -->
+      <div class="card ">
         <div class="col-6">
 
-    
-      <img src={{profile.photo}} class="card-img-top" alt="...">
-    </div>
-    <br>
-    
-     <div class="flex-row">
-        
-    </div>
-</div>
+          <img
+            src={{profile.photo}}
+            class="rounded mx-auto d-block "
+            alt="users image"
+            width="360px"
+            height="360px">
+        </div>
+        <br>
 
-    
- 
+        <div class="flex-row">
 
-  
-    
+        </div>
+      </div>
 
-    <br>
+      <br>
 
+      <div class="">
+        <div class="">
 
-    
-       
-      
-      <div class="col-12">
-          <div class="card">
-       
-       
+          <form class="login-form card">
 
-        <form class="login-form">
-            
-            <div class="mb-3">
-              <p>{{name}}</p>
+            <div class="col-6">
+              <h1>{{name}}</h1>
             </div>
-
-            <div class="mb-3">
-              <p>{{profile.email}}</p>
+<div class="mb-3">
+  <h3>{{profile.city}}, {{profile.country}}</h3>
+            </div>
+            <div class="mb-3 ">
+              <h4 class="font-italic">{{profile.email}}</h4>
             </div>
             
-            <p>{{profile.city}}, {{profile.country}}</p>
+            <p class="font-italic">{{profile.city}}, {{profile.country}}</p>
 
             <div class="mb-3">
               <p>{{profile.phone}}</p>
             </div>
 
-
             <div class="mb-3">
+              <label
+                for="exampleInputPassword1"
+                class="form-label"
+              >Skills</label>
+              <p>{{profile.skills}}</p>
+            </div>
                 <label for="exampleInputPassword1" class="form-label">Skills</label>
                 <p>{{ profile.skills}}</p>
               </div>
@@ -78,38 +63,37 @@
 
 
 
-</div>
+          </form>
 
-</div>
+      
 
+    <!-- second area -->
 
-<!-- second area -->
+    <div class="col-md-6">
 
-<div class=" card col-12">
+      <div class="card-body text">
 
-    <div class="card-body">
-       
-       
-        
-        
-            
-            <div class="mb-3 card">
-              <label for="aboutme" class="form-label">About Me</label>
-              {{profile.about}}
-            </div>
+        <div class="mb-3 card inputSize">
+          <label
+            for="aboutme"
+            class="form-label"
+            width="10px"
+            height="10px"
+          >About Me</label>
+          {{profile.about}}
+        </div>
 
+        <div class="mb-3 card inputSize">
+          <label for="experience" class="form-label">Experience</label>
+          {{profile.experience}}
+        </div>
+
+        <div class="mb-3 card inputSize">
+          <label for="hobbies" class="form-label ">Hobbies</label>
+          {{profile.hobbies}}
+        </div>
             <div class="mb-3 card ">
-              <label for="experience" class="form-label">Expereince</label>
-              {{profile.experience}}
-            </div>
-
-            <div class="mb-3 card ">
-              <label for="hobbies" class="form-label">Hobbies</label>
-              {{profile.hobbies}}
-            </div>
-
-            <div class="mb-3 card ">
-              <label for="facebook" class="form-label" ><img src="/img/facebook.png" height="50" width="50"/><a class="px-2" href={{profile.facebook_link}}>{{profile.facebook_link}}</a></label>
+              <label for="facebook" class="form-label " ><img src="/img/facebook.png" height="50" width="50"/><a class="px-2" href={{profile.facebook_link}}>{{profile.facebook_link}}</a></label>
 
               <label for="linkedin" class="form-label"><img src="/img/linkedin.png" height="50" width="50"/><a class="px-2" href={{profile.linkedin_link}}>{{profile.linkedin_link}}</a></label>
 
@@ -117,19 +101,8 @@
             </div>
 
 
-          
-            
-          
       </div>
     </div>
-   
-    
 
-
-    
-
+  </div>
 </div>
-</div>
-    
-</body>
-</html>

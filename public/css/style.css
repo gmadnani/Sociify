@@ -1,4 +1,14 @@
 /* Fixed to the top navbar padding*/
 body {
   padding-top: 4.5rem;
+  background-color: #EA4F33;
+}
+
+.inputSize{
+  /* width: auto; */
+  height: 200px;
+}
+
+.cardColor{
+  background-color: #263B6D;
 }
