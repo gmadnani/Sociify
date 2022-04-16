@@ -11,38 +11,52 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    email: {
+      type: DataTypes.STRING
+    },
     phone: {
       type: DataTypes.INTEGER,
+      allowNull: true,
     },
     city: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     country: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     photo: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     about: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     skills: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     experience: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     hobbies: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     facebook_link: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     linkedin_link: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     github_link: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     privacy: {
       type: DataTypes.STRING,

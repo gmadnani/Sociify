@@ -13,12 +13,12 @@ const editFormHandler = async (event) => {
     const facebook= document.querySelector("#userFacebook").value.trim();
     const linkedin= document.querySelector("#userLinkedin").value.trim();
     const github= document.querySelector("#userGithub").value.trim();
-
-
   
+    const id = document.querySelector("#profileImage").getAttribute("data-id");
+    console.log(id)
       // Send a POST request to the API endpoint
-      const response = await fetch("/api/profile/editProfile", {
-        method: "Put",
+      const response = await fetch(`/api/profile/editProfile/${id}`, {
+        method: 'PUT',
         body: JSON.stringify({ email, city, country, phone, skills, about, experience, hobbies, facebook, linkedin, github }),
         headers: { "Content-Type": "application/json" },
       });
