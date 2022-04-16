@@ -12,54 +12,56 @@ Profile.init(
       autoIncrement: true,
     },
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: ''
     },
     phone: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      defaultValue: '0'
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     country: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     photo: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: 'https://sociify-profile-photos.s3.eu-west-2.amazonaws.com/default.png'
     },
     about: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     skills: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     experience: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     hobbies: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     facebook_link: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     linkedin_link: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     github_link: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: ''
     },
     privacy: {
       type: DataTypes.STRING,
+      defaultValue: 'private'
     },
     user_id: {
       type: DataTypes.INTEGER,

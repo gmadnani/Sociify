@@ -10,16 +10,16 @@ const editFormHandler = async (event) => {
     const about= document.querySelector("#userAbout").value.trim();
     const experience= document.querySelector("#userExperience").value.trim();
     const hobbies= document.querySelector("#userHobbies").value.trim();
-    const facebook= document.querySelector("#userFacebook").value.trim();
-    const linkedin= document.querySelector("#userLinkedin").value.trim();
-    const github= document.querySelector("#userGithub").value.trim();
+    const facebook_link= document.querySelector("#userFacebook").value.trim();
+    const linkedin_link= document.querySelector("#userLinkedin").value.trim();
+    const github_link= document.querySelector("#userGithub").value.trim();
   
     const id = document.querySelector("#profileImage").getAttribute("data-id");
     console.log(id)
       // Send a POST request to the API endpoint
       const response = await fetch(`/api/profile/editProfile/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ email, city, country, phone, skills, about, experience, hobbies, facebook, linkedin, github }),
+        body: JSON.stringify({ email, city, country, phone, skills, about, experience, hobbies, facebook_link, linkedin_link, github_link }),
         headers: { "Content-Type": "application/json" },
       });
   
