@@ -28,16 +28,16 @@
           <form class="login-form card">
 
             <div class="col-6">
-              <p>{{name}}</p>
+              <h1>{{name}}</h1>
             </div>
 <div class="mb-3">
-  <p>{{profile.city}}, {{profile.country}}</p>
+  <h3>{{profile.city}}, {{profile.country}}</h3>
             </div>
-            <div class="mb-3">
-              <p>{{profile.email}}</p>
+            <div class="mb-3 ">
+              <h4 class="font-italic">{{profile.email}}</h4>
             </div>
             
-            <p>{{profile.city}}, {{profile.country}}</p>
+            <p class="font-italic">{{profile.city}}, {{profile.country}}</p>
 
             <div class="mb-3">
               <p>{{profile.phone}}</p>
@@ -71,7 +71,7 @@
 
     <div class="col-md-6">
 
-      <div class="card-body">
+      <div class="card-body text">
 
         <div class="mb-3 card inputSize">
           <label
@@ -84,16 +84,16 @@
         </div>
 
         <div class="mb-3 card inputSize">
-          <label for="experience" class="form-label">Expereince</label>
+          <label for="experience" class="form-label">Experience</label>
           {{profile.experience}}
         </div>
 
         <div class="mb-3 card inputSize">
-          <label for="hobbies" class="form-label">Hobbies</label>
+          <label for="hobbies" class="form-label ">Hobbies</label>
           {{profile.hobbies}}
         </div>
             <div class="mb-3 card ">
-              <label for="facebook" class="form-label" ><img src="/img/facebook.png" height="50" width="50"/><a class="px-2" href={{profile.facebook_link}}>{{profile.facebook_link}}</a></label>
+              <label for="facebook" class="form-label " ><img src="/img/facebook.png" height="50" width="50"/><a class="px-2" href={{profile.facebook_link}}>{{profile.facebook_link}}</a></label>
 
               <label for="linkedin" class="form-label"><img src="/img/linkedin.png" height="50" width="50"/><a class="px-2" href={{profile.linkedin_link}}>{{profile.linkedin_link}}</a></label>
 
