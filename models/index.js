@@ -1,5 +1,5 @@
 const User = require("./User");
-const Profile = require("./Profile");
+const Profile = require("./profile");
 
 // User can only have one profile
 User.hasOne(Profile, {
