@@ -58,6 +58,7 @@ router.get("/allProfiles", async (req, res) => {
   }
 });
 
+//rendering a logged in user's profile
 router.get("/myProfile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -75,6 +76,7 @@ router.get("/myProfile", withAuth, async (req, res) => {
   }
 });
 
+//rendering an edit profile page for the logged in user
 // Use withAuth middleware to prevent access to route
 router.get("/editProfile", withAuth, async (req, res) => {
   try {
@@ -98,7 +100,7 @@ router.get("/editProfile", withAuth, async (req, res) => {
   }
 });
 
-// Get single profile page by id
+// Get single profile page by id for other users
 router.get("/profiles/:id", async (req, res) => {
   if (req.session.user_id == req.params.id) {
     res.redirect("/myProfile");

@@ -10,6 +10,7 @@ const s3 = new AWS.S3();
 // Bucket name
 const BUCKET_NAME = "sociify-profile-photos";
 
+//get all profiles
 router.get("/", async (req, res) => {
   const profileData = await Profile.findAll().catch((err) => {
     res.json(err);
@@ -17,6 +18,7 @@ router.get("/", async (req, res) => {
   res.json(profileData);
 });
 
+//get profile by id
 router.get("/:id", async (req, res) => {
   const profileData = await Profile.findOne({
     where: { id: req.params.id },
@@ -26,6 +28,7 @@ router.get("/:id", async (req, res) => {
   res.json(profileData);
 });
 
+//create a new profile
 router.post("/createProfile", withAuth, async (req, res) => {
   try {
     const newProfile = await Profile.create({
@@ -39,6 +42,7 @@ router.post("/createProfile", withAuth, async (req, res) => {
   }
 });
 
+//edit a profile
 router.put("/editProfile/:id", withAuth, async (req, res) => {
   try {
     const editProfile = await Profile.update(req.body, {
@@ -51,20 +55,6 @@ router.put("/editProfile/:id", withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-// // Edit photo
-// router.put("/editPhoto/:id", withAuth, async (req, res) => {
-//   try {
-//     const editPhoto = await Profile.update(req.body, {
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-//     res.status(200).json(editPhoto);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
 
 // Upload photo
 router.put("/upload/:id", async (req, res) => {
@@ -109,6 +99,7 @@ router.put("/upload/:id", async (req, res) => {
   }
 });
 
+//deleting a profile
 router.delete("/:id", async (req, res) => {
   try {
     const [affectedRows] = await Profile.destroy({
@@ -127,6 +118,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+//changing the privacy of a profile
 router.put("/privacy", withAuth, async (req, res) => {
   const privacyChange = await Profile.findOne({
     where: { user_id: req.session.user_id },
