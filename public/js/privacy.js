@@ -1,11 +1,9 @@
+//switch the user privacy for public to private and vice versa
 const privacyUpdate = async (e) => {
   e.preventDefault();
 
-  console.log("switch clicked");
-
   const response = await fetch(`/api/profile/privacy`, {
     method: "PUT",
-    // body: JSON.stringify(request),
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {

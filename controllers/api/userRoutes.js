@@ -1,20 +1,25 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-router.get('/', async (req, res) => {
+//get all users
+router.get("/", async (req, res) => {
   const userData = await User.findAll().catch((err) => {
     res.json(err);
   });
   res.json(userData);
 });
 
-router.get('/:id', async(req, res) => {
-  const userData = await User.findOne({where: {id: req.params.id}}).catch((err) => {
-    res.json(err);
-  });
+//get users by id
+router.get("/:id", async (req, res) => {
+  const userData = await User.findOne({ where: { id: req.params.id } }).catch(
+    (err) => {
+      res.json(err);
+    }
+  );
   res.json(userData);
 });
 
+//registering a new user
 router.post("/register", async (req, res) => {
   try {
     const newUser = await User.create(req.body);
@@ -30,9 +35,11 @@ router.post("/register", async (req, res) => {
   }
 });
 
+
+//logging in a user
 router.post("/login", async (req, res) => {
-  try { 
-    console.log(req.body,'fromLogin')
+  try {
+    console.log(req.body, "fromLogin");
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
@@ -62,6 +69,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//logging out a user
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
